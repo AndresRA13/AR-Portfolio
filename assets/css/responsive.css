@@ -45,7 +45,7 @@
 @media (min-width: 768px) and (max-width: 991px) {
 	.section-title {
 		font-size: 30px;
-		margin-bottom: 70px;
+		
 	}
 	.services-item .services-content h3 a {
 		font-size: 18px;
@@ -58,19 +58,11 @@
 
 /* mobile or only mobile */
 @media (max-width: 767px) {
-	.navbar-light .navbar-nav .nav-link {
-		color: #333;
-		padding: 0 0 10px;
-	}
+
 	.funfact {
 		margin-bottom: 30px;
 	}
-	.section-title {
-		margin-bottom: 70px;
-	}
-	.navbar-brand img {
-		margin: 5px 0;
-	}
+
 	.banner_content h1 {
 		font-size: 60px;
 	}
