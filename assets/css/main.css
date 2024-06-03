@@ -531,6 +531,11 @@ a.back-to-top:focus {
 /* ==========================================================================
 03. Start Banner Area particles principal section nav and home
 ========================================================================== */
+#home{
+  display: flex;
+  align-items: center;
+  min-height: 100vh;
+}
 #particles-js {
   position: absolute;
   width: 100%;
@@ -590,28 +595,71 @@ a.back-to-top:focus {
 /* ==========================================================================
 04. Start About Section
 ========================================================================== */
-
-.about-content {
-  margin-top: 15px;
-}
-.section-title{
-  padding-top: 0px;
-}
-.about_title {
-  color: rgba(253, 253, 253, 0.815);
-  font-size: 28px;
-  text-align: center;
-}
-.about_title span {
-  color: rgb(0, 174, 255);
-}
-.about_paragraft {
-  text-align: center;
-  color: rgb(155, 155, 155);
-  justify-content: center;
+.about {
+  display: flex;
+  flex-direction: column;
   align-items: center;
-  margin-bottom: 150px;
+  justify-content: center;
+  min-height: 100vh;
+  background-color: #000;
+  text-align: center;
+  padding: 20px;
+  box-sizing: border-box;
 }
+
+.section-title {
+  font-size: 2em;
+  margin-bottom: 20px;
+  text-align: center;
+  color: whitesmoke;
+}
+
+.about_contain {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  width: 100%;
+}
+.container_me{
+  display: flex;
+}
+.about_title{
+  color: white;
+}
+.about_paragraft{
+  color: rgba(245, 245, 245, 0.726);
+  text-align: center;
+}
+.about_title span{
+  color: rgb(16, 176, 197);
+}
+.container_me, .about_container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.about_img {
+  max-width: 100%;
+  height: auto;
+}
+
+@media (max-width: 768px) {
+  .about_contain {
+      flex-direction: column;
+      align-items: center;
+  }
+
+  .container_me, .about_container {
+      width: 100%;
+      margin: 0;
+  }
+}
+
 
 /* ==========================================================================
 04. End About Area
@@ -727,9 +775,10 @@ Start FunFacts CSS
 --------------------------------------------------------------*/
 /* SECCION S K I L L S */
 .skills{
-
+  background-color: black;
   color: #fff;
   padding: 50px 20px;
+  
 }
 .skills .contenido-seccion{
   max-width: 1100px;
