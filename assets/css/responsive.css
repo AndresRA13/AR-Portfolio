@@ -11,9 +11,7 @@
 /* tablets */
 @media (max-width: 991px) {
 	/**about contain*/
-	.about{
-		height: auto;
-	  }
+
 	.banner_content h1{
 		font-size: 30px;
 	}
