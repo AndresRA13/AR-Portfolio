@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+ 
 /***************************************
 ========================================
 
@@ -438,7 +440,6 @@ a.back-to-top:focus {
   background-color: #0000009a;
   position: fixed;
   inset: 0;
-
   opacity: 0;
   pointer-events: none;
   transition: 0.3s opacity;
@@ -462,17 +463,43 @@ a.back-to-top:focus {
   list-style: none;
   overflow: auto;
   padding: 70px 0;
+  font-family:'poppins', sans-serif;
 }
 
 .nav__item {
-  width: 80%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 90%;
   /* background-color: #000; */
   margin: 0 auto;
   color: var(--almost-black);
   cursor: pointer;
-  padding: 20px 0;
-  font-weight: 500;
+  padding: 10px 0;
+  font-weight: 600;
   font-size: 17px;
+}
+.nav__item a{
+  position: relative;
+  text-decoration: none;
+}
+.nav__item a:hover{
+  color: white;
+  text-decoration: none;
+}
+.nav__item a::after {
+  content: '';
+  position: absolute;
+  background: white;
+  height: 2px;
+  width: 100%;
+  left: 0;
+  bottom: 1px;
+  opacity: 0;
+  transition: opacity .3s ease-in-out;
+}
+.nav__item a:hover::after {
+  opacity: 1;
 }
 
 .nav__item:has(.nav__parent) {
@@ -506,7 +533,10 @@ a.back-to-top:focus {
   text-decoration: none;
   color: var(--almost-black);
 }
+.nav_butle{
+  font-size: 25px;
 
+}
 .nav__login {
   width: 90%;
   margin: 0 auto;
@@ -524,7 +554,7 @@ a.back-to-top:focus {
   color: var(--medium-gray);
   padding: 0.7em 0;
   text-decoration: none;
-  z-index: 110;
+
 }
 
 /* ==========================================================================
