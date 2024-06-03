@@ -396,7 +396,7 @@ a.back-to-top:focus {
 
 .nav {
   background-color: black;
-  height: 70px;
+  height: 8vh;
   width: 100%;
   display: flex;
   position: fixed;
@@ -534,7 +534,7 @@ a.back-to-top:focus {
 #home{
   display: flex;
   align-items: center;
-  min-height: 100vh;
+  min-height: 92vh;
 }
 #particles-js {
   position: absolute;
