@@ -421,7 +421,7 @@ a.back-to-top:focus {
 .nav__hamburguer {
   width: 30px;
   height: 50%;
-  background-image: url("/assets/Import/icon-menu.svg");
+  background-image: url("/assets/img/icon-menu.svg");
   background-repeat: no-repeat;
   background-position: center;
   cursor: pointer;
@@ -431,7 +431,7 @@ a.back-to-top:focus {
 }
 
 .nav__hamburguer--open {
-  background-image: url("/assets/Import/icon-close-menu.svg");
+  background-image: url("/assets/img/icon-close-menu.svg");
 }
 
 .nav__overlay {
@@ -456,7 +456,7 @@ a.back-to-top:focus {
   right: 0;
   background-color: #000000;
   color: white;
-  width: 65%;
+  width: 50%;
   max-width: 400px;
   padding: 0;
   list-style: none;
@@ -471,6 +471,8 @@ a.back-to-top:focus {
   color: var(--almost-black);
   cursor: pointer;
   padding: 20px 0;
+  font-weight: 500;
+  font-size: 17px;
 }
 
 .nav__item:has(.nav__parent) {
@@ -522,6 +524,7 @@ a.back-to-top:focus {
   color: var(--medium-gray);
   padding: 0.7em 0;
   text-decoration: none;
+  z-index: 110;
 }
 
 /* ==========================================================================
@@ -1225,6 +1228,8 @@ Start FunFacts CSS
     margin: 0;
     padding: 0;
     position: relative;
+    font-size: 15px;
+  
   }
 
   .nav__inner {
@@ -1261,5 +1266,8 @@ Start FunFacts CSS
   .nav__login--border {
     margin: 0;
     padding: 0 1.5em;
+  }
+  .nav_btn{
+    font-size: 30px;
   }
 }
