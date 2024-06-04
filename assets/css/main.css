@@ -411,7 +411,8 @@ a.back-to-top:focus {
   align-items: center;
   font-size: 35px;
   font-weight: bold;
-  color:  #22E1FF ;
+  color:  #22E1FF;
+  padding-left: 0px;
 
 }
 .nav__logo i {
@@ -534,7 +535,7 @@ a.back-to-top:focus {
   color: var(--almost-black);
 }
 .nav_butle{
-  font-size: 25px;
+  font-size: 20px;
 
 }
 .nav__login {
@@ -555,6 +556,9 @@ a.back-to-top:focus {
   padding: 0.7em 0;
   text-decoration: none;
 
+}
+.nav_signtwo{
+  padding-left: 10px;
 }
 
 /* ==========================================================================
@@ -660,10 +664,13 @@ a.back-to-top:focus {
 }
 .about_title{
   color: white;
+  padding-right: 50px;
+
 }
 .about_paragraft{
   color: rgba(245, 245, 245, 0.726);
-  text-align: center;
+  text-align: initial;
+  padding: 0px 10px 0px 40px;
 }
 .about_title span{
   color: rgb(16, 176, 197);
@@ -681,7 +688,8 @@ a.back-to-top:focus {
   height: auto;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 768px) { 
+
   .about_contain {
       flex-direction: column;
       align-items: center;
@@ -690,6 +698,16 @@ a.back-to-top:focus {
   .container_me, .about_container {
       width: 100%;
       margin: 0;
+  }
+  .about_title{
+    color: white;
+    padding-right: 0px;
+  
+  }
+  .about_paragraft{
+    color: rgba(245, 245, 245, 0.726);
+    text-align: initial;
+    padding: 0px 0px 0px 0px;
   }
 }
 
@@ -1226,6 +1244,9 @@ Start FunFacts CSS
     padding: 0px 0 0;
     position: fixed;
     background-color: black;
+  }
+  .nav__logo{
+    padding-left: 35px;
   }
 
   .nav__hamburguer {

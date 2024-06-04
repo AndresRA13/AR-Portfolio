@@ -106,3 +106,16 @@ document.getElementById('form')
       alert(JSON.stringify(err));
     });
 });
+
+/**Button contact merge */
+function Linkedin() {
+    window.open('https://www.linkedin.com/in/andres-rojas-466440299/', '_blank');
+}
+
+function Github() {
+    window.open('https://github.com/AndresRA13', '_blank');
+}
+
+function Gmail() {
+    window.open('https://gmail.com', '_blank');
+}
