@@ -127,7 +127,9 @@ document.addEventListener("DOMContentLoaded", function() {
           date: "August 31, 2022",
           category: "Development",
           description: "is a movie website developed using HTML, CSS and JavaScript technologies. The page offers an intuitive and attractive interface for users who want to explore information about various movies.",
-          link: "https://cineflix23.github.io/Peliculasyseries2023/login.html?"
+          link: "https://cineflix23.github.io/Peliculasyseries2023/login.html?",
+          code: "https://github.com/usuario/repositorio", // nuevo campo
+          techs: ["React", "Node.js", "MongoDB"] // nuevo campo
       },
       {
           img: "assets/img/AR.png",
@@ -135,7 +137,9 @@ document.addEventListener("DOMContentLoaded", function() {
           date: "December 15, 2022",
           category: "Development",
           description: "MusicHub is an interactive website created with HTML, CSS and JavaScript, designed for music lovers. Offers a wide collection of music resources available for download with a modern and easy-to-use interface.",
-          link: "https://andresra13.github.io/AR-MinWeb/?"
+          link: "https://andresra13.github.io/AR-MinWeb/?",
+          code: "https://github.com/usuario/repositorio", // nuevo campo
+          techs: ["React", "Node.js", "MongoDB"] // nuevo campo
       },
       {
           img: "assets/img/Food.png",
@@ -143,7 +147,9 @@ document.addEventListener("DOMContentLoaded", function() {
           date: "January 31, 2023",
           category: "Development",
           description: "FoodieFast is a dynamic website built with HTML, CSS and JavaScript, designed for fast food enthusiasts. It offers a varied menu of options available to order, including burgers, pizzas, and tacos.",
-          link: "https://andresr13.github.io/AR-WebSite/?"
+          link: "https://andresr13.github.io/AR-WebSite/?",
+          code: "https://github.com/usuario/repositorio", // nuevo campo
+          techs: ["React", "Node.js", "MongoDB"] // nuevo campo
       },
       {
           img: "assets/img/Port.png",
@@ -151,7 +157,9 @@ document.addEventListener("DOMContentLoaded", function() {
           date: "March 20, 2023",
           category: "Development",
           description: "MyPortfolio is a modern website developed with HTML, CSS and JavaScript, designed to present jobs and professional skills. Offers a well-organized collection of projects, with a clean and easy-to-navigate interface.",
-          link: "https://ar-portafolio.netlify.app"
+          link: "https://ar-portafolio.netlify.app",
+          code: "https://github.com/usuario/repositorio", // nuevo campo
+          techs: ["React", "Node.js", "MongoDB"] // nuevo campo
       },
       {
           img: "assets/img/Admi.png",
@@ -159,7 +167,9 @@ document.addEventListener("DOMContentLoaded", function() {
           date: "May 29, 2023",
           category: "Development",
           description: "MY ADMIN is an efficient website developed with HTML, CSS and JavaScript, designed to help users manage and monitor their expenses. Offers tools to record and categorize expenses and view detailed reports.",
-          link: "https://myadm.netlify.app"
+          link: "https://myadm.netlify.app",
+          code: "https://github.com/usuario/repositorio", // nuevo campo
+          techs: ["React", "Node.js", "MongoDB"] // nuevo campo
       },
       {
           img: "assets/img/scann.png",
@@ -167,7 +177,9 @@ document.addEventListener("DOMContentLoaded", function() {
           date: "July 1, 2023",
           category: "Development",
           description: "is a website developed with HTML, Bootstrap, and JavaScript, designed to help users view Wi-Fi passwords. It offers a simple and easy-to-use interface where users can scan and even generate a QR code.",
-          link: "https://todli.netlify.app/?"
+          link: "https://drawyscanner.netlify.app/?",
+          code: "https://github.com/usuario/repositorio", // nuevo campo
+          techs: ["React", "Node.js", "MongoDB"] // nuevo campo
       },
       {
           img: "assets/img/CineTV.png",
@@ -175,7 +187,9 @@ document.addEventListener("DOMContentLoaded", function() {
           date: "September 13, 2023",
           category: "Development",
           description: "is an innovative application developed with HTML, CSS and JavaScript, designed for movie lovers who want to stay up to date with the latest released movies. Users can explore an up-to-date selection of the latest releases.",
-          link: "https://cinemovietv.netlify.app"
+          link: "https://cinemovietv.netlify.app",
+          code: "https://github.com/usuario/repositorio", // nuevo campo
+          techs: ["React", "Node.js", "MongoDB"] // nuevo campo
       },
       {
           img: "assets/img/eco.png",
@@ -183,7 +197,9 @@ document.addEventListener("DOMContentLoaded", function() {
           date: "December 12, 2023",
           category: "Development",
           description: "is a cutting-edge online store developed with HTML, CSS and JavaScript, designed to showcase the latest trends and styles. Offers an exceptional shopping experience where users can explore a wide selection of clothing items.",
-          link: "https://ecomerce-main.netlify.app"
+          link: "https://ecomerce-main.netlify.app",
+          code: "https://github.com/usuario/repositorio", // nuevo campo
+          techs: ["React", "Node.js", "MongoDB"] // nuevo campo
       },
       
       {
@@ -192,7 +208,9 @@ document.addEventListener("DOMContentLoaded", function() {
           date: "July 31, 2024",
           category: "Design",
           description: "It is an app developed with HTML, CSS and JavaScript, designed to display web page templates. It offers an exceptional shopping experience where users can explore a wide selection of web templates and also offer development services.",
-          link: "https://aratech.netlify.app"
+          link: "https://aratech.netlify.app",
+          code: "https://github.com/usuario/repositorio", // nuevo campo
+          techs: ["React", "Node.js", "MongoDB"] // nuevo campo
       }
   ];
 
@@ -209,21 +227,27 @@ document.addEventListener("DOMContentLoaded", function() {
       const projectsToShow = projects.slice(start, end);
 
       projectsToShow.forEach(project => {
+          // Chips de tecnologías
+          let techsHTML = '';
+          if (project.techs && Array.isArray(project.techs)) {
+              techsHTML = `<div class="project-techs">` +
+                  project.techs.map(tech => `<span class="tech-chip ${tech.toLowerCase().replace(/\s/g, '')}">${tech}</span>`).join('') +
+                  `</div>`;
+          }
+          // Botón de código (si existe)
+          let codeBtn = project.code ? `<a href="${project.code}" class="project-btn code" target="_blank"><i class="fa-brands fa-github"></i> Código</a>` : '';
+          // Botón demo
+          let demoBtn = project.link ? `<a href="${project.link}" class="project-btn demo" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i> Demo</a>` : '';
+          // Renderizado de la tarjeta
           const projectElement = `
-              <div class="col-lg-4 col-md-4 col-xs-12">
-                  <div class="single_blog wow fadeInUp">
-                      <div class="blog-thumb">
-                          <div class="blog-image">
-                             <img src="${project.img}" class="img-responsive" alt=""/>
-                          </div>
-                          <div class="blog-info">
-                              <h4>${project.title}</h4>
-                              <small><i class="fa fa-clock-o"></i> ${project.date}</small>
-                              <span>| ${project.category}</span>                                            
-                              <p>${project.description}</p>
-                              <a href="${project.link}" target="_blank" class="btn blog_btn btn-secondary">watch online</a>
-                          </div>
-                      </div>
+              <div class="project-card">
+                  <img src="${project.img}" class="project-img" alt="${project.title}"/>
+                  <h3 class="project-title">${project.title}</h3>
+                  <p class="project-desc">${project.description}</p>
+                  ${techsHTML}
+                  <div class="project-actions">
+                      ${demoBtn}
+                      ${codeBtn}
                   </div>
               </div>`;
           projectsContainer.innerHTML += projectElement;
@@ -252,4 +276,59 @@ document.addEventListener("DOMContentLoaded", function() {
 
   renderProjects();
   renderPagination();
+
+  // Animación de barras de progreso en Skills Minimalista
+  function animateSkillsBars() {
+    const bars = document.querySelectorAll('.skills-minimal-progress');
+    bars.forEach(bar => {
+      const targetWidth = bar.getAttribute('style').match(/width:(\d+)%/);
+      if (targetWidth) {
+        bar.style.transition = 'none';
+        bar.style.width = '0%';
+        setTimeout(() => {
+          bar.style.transition = 'width 1.2s cubic-bezier(.77,0,.18,1)';
+          bar.style.width = targetWidth[1] + '%';
+        }, 100);
+      }
+    });
+  }
+
+  function resetSkillsBars() {
+    const bars = document.querySelectorAll('.skills-minimal-progress');
+    bars.forEach(bar => {
+      bar.style.transition = 'none';
+      bar.style.width = '0%';
+    });
+  }
+
+  // Usar IntersectionObserver para animar cada vez que la sección es visible
+  const skillsSection = document.querySelector('.skills-minimal');
+  let skillsAnimatedOnce = false;
+  if (skillsSection) {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.intersectionRatio > 0.15 && !skillsAnimatedOnce) {
+          animateSkillsBars();
+          skillsAnimatedOnce = true;
+          observer.disconnect();
+        }
+      });
+    }, { threshold: 0.15 });
+    observer.observe(skillsSection);
+  }
+
+  // Animación de entrada para About Me
+  const aboutMeSection = document.querySelector('.about-minimal-container');
+  if (aboutMeSection) {
+    aboutMeSection.classList.remove('about-animate');
+    const observerAbout = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          aboutMeSection.classList.add('about-animate');
+          observerAbout.disconnect();
+        }
+      });
+    }, { threshold: 0.15 });
+    observerAbout.observe(aboutMeSection);
+  }
 });
